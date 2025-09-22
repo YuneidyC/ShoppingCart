@@ -23,6 +23,13 @@ export default defineConfig([
       },
     },
     rules: {
+      'prettier/prettier': [
+        'error',
+        {
+          singleQuote: true,
+          semi: false,
+        },
+      ],
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
