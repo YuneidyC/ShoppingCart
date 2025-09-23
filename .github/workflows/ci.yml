@@ -13,8 +13,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check format
-        run: npm format-check
+        run: npm run format-check
 
       # Step 2:
       - name: Run tests
-        run: npm test
+        run: npm run test
