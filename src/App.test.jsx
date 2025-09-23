@@ -4,6 +4,10 @@ import userEvent from '@testing-library/user-event'
 import App from './App'
 
 describe('App component', () => {
+  it('Fail test', () => {
+    expect("aaa").toMatch('ba');
+  })
+
   it('renders hello', () => {
     const { container } = render(<App />)
     expect(container).toMatchSnapshot()
