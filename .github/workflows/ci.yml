@@ -12,9 +12,11 @@ jobs:
       # Step 1: Checkout the code
       - uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Check format
         run: npm run format-check
 
-      # Step 2:
       - name: Run tests
         run: npm run test
