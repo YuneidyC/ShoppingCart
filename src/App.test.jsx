@@ -5,7 +5,7 @@ import App from './App'
 
 describe('App component', () => {
   it('Fail test', () => {
-    expect("aaa").toMatch('ba');
+    expect('aaa').toMatch('ba')
   })
 
   it('renders hello', () => {
