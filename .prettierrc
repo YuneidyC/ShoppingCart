@@ -1,11 +1,11 @@
 {
   "singleQuote": true,
-  "semi": false,
   "overrides": [
     {
-      "files": ["*.html", "legacy/**/*.js"],
+      "files": ["*.html", "legacy/**/*.js", "*.jsx"],
       "options": {
-        "tabWidth": 4
+        "tabWidth": 4,
+        "semi": true
       }
     }
   ]
