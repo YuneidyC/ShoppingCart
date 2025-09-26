@@ -1,19 +1,11 @@
-import { useState } from 'react';
+import Navbar from './component/Navbar';
+
 import './App.css';
 
 function App() {
-    const [heading, setHeading] = useState('Hello!');
-
-    const clickHandler = () => {
-        setHeading('Hello World!');
-    };
-
     return (
         <>
-            <button type="button" onClick={clickHandler}>
-                Click Me
-            </button>
-            <h1>{heading}</h1>
+            <Navbar></Navbar>
         </>
     );
 }
