@@ -2,4 +2,6 @@
 
 @theme {
   --color-black: black;
+  --shadow-products: 0px 0px 4px 4px rgb(0 0 0 / 0.05);
+  --my-height-product: calc(100vh - 50px);
 }
