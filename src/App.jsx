@@ -12,7 +12,7 @@ function App() {
     useEffect(() => {
         fetch(serverUrl)
             .then((response) => response.json())
-            .then((data) => setProducts(data))
+            .then((data) => setProducts(data));
     }, []);
 
     return (
