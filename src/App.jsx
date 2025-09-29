@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Navbar from './component/Navbar';
+import ProductList from './component/ProductList';
 
 import './App.css';
 
@@ -17,6 +18,7 @@ function App() {
     return (
         <>
             <Navbar></Navbar>
+            <ProductList products={products}></ProductList>
         </>
     );
 }
