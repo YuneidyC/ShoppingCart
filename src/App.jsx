@@ -15,10 +15,18 @@ function App() {
             .then((data) => setProducts(data));
     }, []);
 
+    const removeFromCart = (payload, indexValue) => {
+        setItems({
+            ...items,
+            cart: items.cart.filter(
+                (items, index) => items.id !== payload && index !== indexValue
+            ),
+        });
+    };
+
     return (
         <>
-            <Navbar></Navbar>
-            <ProductList products={products}></ProductList>
+                removeFromCart={removeFromCart}
         </>
     );
 }
