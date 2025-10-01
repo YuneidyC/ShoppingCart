@@ -3,10 +3,9 @@ import addItem from '../assets/add-shopping-cart.png';
 import '../App.css';
 
 function Product({ product, addToCart }) {
-
     const handleAddItem = (item) => {
         addToCart(item);
-    }
+    };
 
     return (
         <>
@@ -24,7 +23,9 @@ function Product({ product, addToCart }) {
                         className="w-[25px] h-[25px] row-span-2 cursor-pointer justify-self-end self-start"
                         src={addItem}
                         alt="Add"
-                        onClick={() => {handleAddItem(product)}}
+                        onClick={() => {
+                            handleAddItem(product);
+                        }}
                     />
                     <p className="w-[180px] h-[60px] text-sm row-span-1 col-span-full overflow-hidden font-medium text-stone-500">
                         {product.title}

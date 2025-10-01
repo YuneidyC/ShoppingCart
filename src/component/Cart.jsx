@@ -3,7 +3,6 @@ import '../App.css';
 import CartItems from './CartItems';
 
 function Cart({ items, addToCart, removeFromCart, reduceItem }) {
-
     const sumTotal = () => {
         const reducer = (accumulator, currentValue) =>
             accumulator + currentValue.price * currentValue.qty;

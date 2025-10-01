@@ -7,7 +7,11 @@ function ProductList({ products, addToCart }) {
         <>
             <ul className="product-list">
                 {products.map((product) => (
-                    <Product key={product.id} product={product} addToCart={addToCart}></Product>
+                    <Product
+                        key={product.id}
+                        product={product}
+                        addToCart={addToCart}
+                    ></Product>
                 ))}
             </ul>
         </>

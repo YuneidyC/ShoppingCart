@@ -58,7 +58,7 @@ function App() {
         setItems({
             ...items,
             cart: items.cart.filter(
-                (items, index) => items.id !== payload && index !== indexValue
+                (items, index) => items.id !== payload && index !== indexValue,
             ),
         });
     };
