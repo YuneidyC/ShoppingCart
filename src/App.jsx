@@ -42,6 +42,18 @@ function App() {
         }
     };
 
+    const reduceItem = (payload, indexValue) => {
+        if (payload.qty > 1) {
+            payload.qty--;
+            setItems({
+                ...items,
+                cart: [...items.cart],
+            });
+        } else {
+            removeFromCart(payload, indexValue);
+        }
+    };
+
     const removeFromCart = (payload, indexValue) => {
         setItems({
             ...items,
@@ -53,9 +65,18 @@ function App() {
 
     return (
         <>
+            <Navbar
+                items={items}
                 addToCart={addToCart}
+                reduceItem={reduceItem}
                 removeFromCart={removeFromCart}
+            ></Navbar>
+            <ProductList
+                products={products}
+                items={items}
                 addToCart={addToCart}
+                setItems={setItems}
+            ></ProductList>
         </>
     );
 }
