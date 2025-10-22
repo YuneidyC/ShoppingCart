@@ -46,9 +46,9 @@ Using the REST API [Fake Store API](https://fakestoreapi.com/).
 
 ### Prerequisites
 
-|               | Version       | Installation |
-| ------------- | ------------- | ------------- |
-| npm           | 11.6.1+       | `npm install npm@latest -g`  |
+|     | Version | Installation                |
+| --- | ------- | --------------------------- |
+| npm | 10.1.0+ | `npm install npm@latest -g` |
 
 ### Testing locally
 
