@@ -1,8 +1,14 @@
+import { useContext } from 'react';
+
 import addItem from '../assets/add-shopping-cart.png';
 
 import '../App.css';
 
-function Product({ product, addToCart }) {
+import AppContext from '../context/AppContext';
+
+function Product({ product }) {
+    const { addToCart } = useContext(AppContext);
+
     const handleAddItem = (item) => {
         addToCart(item);
     };
@@ -16,7 +22,7 @@ function Product({ product, addToCart }) {
                     alt={product.title}
                 />
                 <div className="h-auto pl-[5px] pb-[5px] grid grid-row-2 grid-cols-2 items-center">
-                    <p className="w-[60px] row-span-2 font-bold justify-self-start">
+                    <p className="w-[60px] row-span-2 font-weight justify-self-start">
                         ${product.price}
                     </p>
                     <img

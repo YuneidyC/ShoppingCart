@@ -1,17 +1,22 @@
+import { useContext } from 'react';
+
 import Product from './Product';
+
+import AppContext from '../context/AppContext';
 
 import '../App.css';
 
-function ProductList({ products, addToCart }) {
+function ProductList() {
+    const { currentProducts } = useContext(AppContext);
+
     return (
         <>
             <ul className="product-list">
-                {products.map((product) => (
+                {currentProducts.map((product) => (
                     <Product
                         key={product.id}
                         product={product}
-                        addToCart={addToCart}
-                    ></Product>
+                    />
                 ))}
             </ul>
         </>

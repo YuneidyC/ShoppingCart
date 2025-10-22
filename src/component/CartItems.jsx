@@ -1,10 +1,16 @@
+import { useContext } from 'react';
+
 import add from '../assets/add.png';
 import minus from '../assets/minus.png';
 import close from '../assets/close.png';
 
 import '../App.css';
 
-function CartItems({ item, index, addToCart, reduceItem, removeFromCart }) {
+import AppContext from '../context/AppContext';
+
+function CartItems({ item, index }) {
+    const { addToCart, removeFromCart, reduceItem, } = useContext(AppContext);
+
     return (
         <>
             <div className="h-[60px] flex mt-[24px] items-center">
