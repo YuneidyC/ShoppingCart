@@ -14,8 +14,8 @@ function Home() {
     return (
         <>
             <Navbar />
-            {productList ? <ProductList /> : '' }
-            {checkout ? <Checkout /> : '' }
+            {productList ? <ProductList /> : ''}
+            {checkout ? <Checkout /> : ''}
         </>
     );
 }

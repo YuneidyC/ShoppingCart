@@ -8,7 +8,8 @@ import CartItems from './CartItems';
 import AppContext from '../context/AppContext';
 
 function Cart() {
-    const { items, addToCart, removeFromCart, reduceItem, setCheckout } = useContext(AppContext);
+    const { items, addToCart, removeFromCart, reduceItem } =
+        useContext(AppContext);
 
     const sumTotal = () => {
         const reducer = (accumulator, currentValue) =>
@@ -40,11 +41,10 @@ function Cart() {
                         <p>${sumTotal()}</p>
                     </div>
                 </div>
-                <button
-                    className="w-auto p-[8px] self-center shadow-md rounded-md bg-(--color-mustard) cursor-pointer"
-                    onClick={() => setCheckout((prev) => !prev)}
-                >
-                    <Link className={"font-weight"} to={"/checkout"}>Checkout</Link>
+                <button className="w-auto p-[8px] self-center shadow-md rounded-md bg-(--color-mustard) cursor-pointer">
+                    <Link className={"font-weight"} to="checkout">
+                        Checkout
+                    </Link>
                 </button>
             </div>
         </>

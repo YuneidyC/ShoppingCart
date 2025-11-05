@@ -9,7 +9,7 @@ import '../App.css';
 import AppContext from '../context/AppContext';
 
 function CartItems({ item, index }) {
-    const { addToCart, removeFromCart, reduceItem, } = useContext(AppContext);
+    const { addToCart, removeFromCart, reduceItem } = useContext(AppContext);
 
     return (
         <>

@@ -6,9 +6,9 @@ const useGetProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-          fetch(serverUrl)
-          .then((response) => response.json())
-          .then((data) => setProducts(data))
+    fetch(serverUrl)
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
   }, []);
 
   return products;

@@ -6,9 +6,9 @@
   --my-height-product: calc(100vh - 50px);
   --my-max-width: 80%;
   --color-white: white;
-  --color-mustard: #D4AF37;
-  --color-light-gray: #E0E0E0;
-  --color-dark-gray: #1A1A1A;
+  --color-mustard: #d4af37;
+  --color-light-gray: #e0e0e0;
+  --color-dark-gray: #1a1a1a;
 }
 
 @layer components {

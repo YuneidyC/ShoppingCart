@@ -9,8 +9,8 @@ const routes = [
             {
                 path: 'checkout',
                 element: <Checkout />,
-            }
-        ]
+            },
+        ],
     },
 ];
 

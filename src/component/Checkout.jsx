@@ -40,7 +40,11 @@ function Checkout() {
                     className="my-[30px] flex items-center"
                     onClick={() => handleClick()}
                 >
-                    <img className="h-[18px] mr-[10px]" src={arrow} alt="Arrow" />
+                    <img
+                        className="h-[18px] mr-[10px]"
+                        src={arrow}
+                        alt="Arrow"
+                    />
                     <Link to="/">Continue shopping</Link>
                 </button>
                 <div>
@@ -52,7 +56,9 @@ function Checkout() {
                                 src={item.image}
                                 alt={item.name}
                             />
-                            <p className="font-semibold justify-self-auto">{item.title}</p>
+                            <p className="font-semibold justify-self-auto">
+                                {item.title}
+                            </p>
                             <div className="flex w-[70px]">
                                 <img
                                     className="cursor-pointer w-[20px] h-[20px] mx-[5px]"

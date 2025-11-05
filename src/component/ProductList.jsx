@@ -13,10 +13,7 @@ function ProductList() {
         <>
             <ul className="product-list">
                 {currentProducts.map((product) => (
-                    <Product
-                        key={product.id}
-                        product={product}
-                    />
+                    <Product key={product.id} product={product} />
                 ))}
             </ul>
         </>

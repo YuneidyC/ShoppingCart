@@ -10,19 +10,29 @@ import Cart from './Cart';
 import AppContext from '../context/AppContext';
 
 function Navbar() {
-    const { items, totalCartItems, setCheckout, openCart, setOpenCart } = useContext(AppContext);
+    const {
+        items,
+        totalCartItems,
+        openCart,
+        setOpenCart,
+        productList,
+        setProductList,
+    } = useContext(AppContext);
 
     const handleClick = () => {
-        setOpenCart((prev) => !prev);
-        setCheckout((prev) => !prev);
+        if (!productList) {
+            setProductList(true);
+        }
     };
 
     return (
         <>
             <nav>
                 <ul className="h-full flex items-center justify-between">
-                    <li className='font-weight'>
-                        <Link className={"font-weight"} to="/">Home</Link>
+                    <li className="font-weight" onClick={() => handleClick()}>
+                        <Link className={"font-weight"} to="/">
+                            Home
+                        </Link>
                     </li>
                     <li>
                         <h1 className="text-black text-[24px]">
@@ -32,7 +42,7 @@ function Navbar() {
                     <li>
                         <button
                             className="w-[30px] h-[30px] cursor-pointer"
-                            onClick={() => handleClick()}
+                            onClick={() => setOpenCart((prev) => !prev)}
                         >
                             <img
                                 className="w-[30px] h-[30px]"
@@ -45,11 +55,7 @@ function Navbar() {
                                 </div>
                             ) : null}
                         </button>
-                        {openCart ? (
-                            <Cart/>
-                        ) : (
-                            ''
-                        )}
+                        {openCart ? <Cart /> : ""}
                     </li>
                 </ul>
             </nav>

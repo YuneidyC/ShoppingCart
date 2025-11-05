@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import useGetProducts from "./useGetProducts";
+import useGetProducts from './useGetProducts';
 
 const initialState = {
     cart: [],
-}
+};
 
 const useInitialState = () => {
     const [items, setItems] = useState(initialState);
@@ -12,6 +12,7 @@ const useInitialState = () => {
     const initialProducts = useGetProducts();
     const [checkout, setCheckout] = useState(false);
     const [openCart, setOpenCart] = useState(false);
+  const [productList, setProductList] = useState(true);
 
     useEffect(() => {
         setCurrentProducts(initialProducts);
@@ -19,7 +20,7 @@ const useInitialState = () => {
 
     function getAllProducts() {
         setCurrentProducts(initialProducts);
-    };
+  }
 
     const totalCartItems = () => {
         let totalCartItems = 0;
@@ -85,7 +86,9 @@ const useInitialState = () => {
         setCheckout,
         openCart,
         setOpenCart,
-    }
-}
+    productList,
+    setProductList,
+  };
+};
 
 export default useInitialState;
