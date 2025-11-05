@@ -1,7 +1,7 @@
 import Navbar from './component/Navbar';
 import ProductList from './component/ProductList';
 
-import useInitialState from './hooks/useinitialState';
+import useInitialState from './hooks/useInitialState';
 import AppContext from './context/AppContext';
 
 import './App.css';
