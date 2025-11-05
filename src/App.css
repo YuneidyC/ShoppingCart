@@ -23,4 +23,12 @@
   .font-weight {
     @apply font-bold;
   }
+
+  .btn-disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .checkout-elements {
+    @apply w-[100%] grid grid-cols-[50px_100px_60%_70px_15px] gap-8 h-[160px] mb-[30px] items-center justify-start;
+  }
 }
