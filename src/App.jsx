@@ -1,5 +1,4 @@
-import Navbar from './component/Navbar';
-import ProductList from './component/ProductList';
+import Home from './component/Home';
 
 import useInitialState from './hooks/useInitialState';
 import AppContext from './context/AppContext';
@@ -11,8 +10,7 @@ function App() {
 
     return (
         <AppContext.Provider value={initialState}>
-            <Navbar />
-            <ProductList />
+            <Home />
         </AppContext.Provider>
     );
 }
