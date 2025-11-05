@@ -5,10 +5,12 @@ const routes = [
     {
         path: '/',
         element: <App />,
-    },
-    {
-        path: '/checkout',
-        element: <Checkout />,
+        children: [
+            {
+                path: 'checkout',
+                element: <Checkout />,
+            }
+        ]
     },
 ];
 
