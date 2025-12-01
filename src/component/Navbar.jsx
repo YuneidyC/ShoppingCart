@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import { Link } from 'react-router';
 
-import cart from '../assets/cart.png';
+import cart from '@Assets/cart.png';
 
-import '../App.css';
+import '@Styles/App.css';
 
-import Cart from './Cart';
+import Cart from '@Component/Cart';
 
-import AppContext from '../context/AppContext';
+import AppContext from '@Context/AppContext';
 
 function Navbar() {
     const {

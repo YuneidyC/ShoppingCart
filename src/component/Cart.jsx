@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { Link } from 'react-router';
 
-import '../App.css';
+import '@Styles/App.css';
 
-import CartItems from './CartItems';
+import CartItems from '@Component/CartItems';
 
-import AppContext from '../context/AppContext';
+import AppContext from '@Context/AppContext';
 
 function Cart() {
     const { items, addToCart, removeFromCart, reduceItem } =

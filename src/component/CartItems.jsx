@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 
-import add from '../assets/add.png';
-import minus from '../assets/minus.png';
-import close from '../assets/close.png';
+import add from '@Assets/add.png';
+import minus from '@Assets/minus.png';
+import close from '@Assets/close.png';
 
-import '../App.css';
+import '@Styles/App.css';
 
-import AppContext from '../context/AppContext';
+import AppContext from '@Context/AppContext';
 
 function CartItems({ item, index }) {
     const { addToCart, removeFromCart, reduceItem } = useContext(AppContext);

@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 
-import '../App.css';
+import '@Styles/App.css';
 
-import Navbar from './Navbar';
-import ProductList from './ProductList';
+import Navbar from '@Component/Navbar';
+import ProductList from '@Component/ProductList';
+import Checkout from '@Component/Checkout';
 
-import AppContext from '../context/AppContext';
-import Checkout from './Checkout';
+import AppContext from '@Context/AppContext';
 
 function Home() {
     const { productList, checkout } = useContext(AppContext);

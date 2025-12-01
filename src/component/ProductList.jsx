@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 
-import Product from './Product';
+import Product from '@Component/Product';
 
-import AppContext from '../context/AppContext';
+import AppContext from '@Context/AppContext';
 
-import '../App.css';
+import '@Styles/App.css';
 
 function ProductList() {
     const { currentProducts } = useContext(AppContext);

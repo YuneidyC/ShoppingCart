@@ -1,9 +1,9 @@
-import Home from './component/Home';
+import Home from '@Component/Home';
 
-import useInitialState from './hooks/useInitialState';
-import AppContext from './context/AppContext';
+import useInitialState from '@Hooks/useInitialState';
+import AppContext from '@Context/AppContext';
 
-import './App.css';
+import '@Styles/App.css';
 
 function App() {
     const initialState = useInitialState();

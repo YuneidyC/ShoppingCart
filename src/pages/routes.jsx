@@ -1,5 +1,5 @@
 import App from '../App';
-import Checkout from '../component/Checkout';
+import Checkout from '@Component/Checkout';
 
 const routes = [
     {

@@ -1,7 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
-import routes from './pages/routes.jsx';
+
+import routes from '@Pages/routes.jsx';
 
 const router = createBrowserRouter(routes);
 

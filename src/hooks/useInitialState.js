@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useGetProducts from './useGetProducts';
+import useGetProducts from '@Hooks/useGetProducts';
 
 const initialState = {
     cart: [],

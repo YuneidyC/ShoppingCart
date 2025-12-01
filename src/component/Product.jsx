@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 
-import addItem from '../assets/add-shopping-cart.png';
+import addItem from '@Assets/add-shopping-cart.png';
 
-import '../App.css';
+import '@Styles/App.css';
 
-import AppContext from '../context/AppContext';
+import AppContext from '@Context/AppContext';
 
 function Product({ product }) {
     const { addToCart } = useContext(AppContext);

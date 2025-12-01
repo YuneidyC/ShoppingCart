@@ -9,4 +9,14 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
   },
+  resolve: {
+    alias: {
+      '@Component': '/src/component',
+      '@Context': '/src/context',
+      '@Assets': '/src/assets',
+      '@Pages': '/src/pages',
+      '@Hooks': '/src/hooks',
+      '@Styles': '/src/styles'
+    },
+  },
 });
