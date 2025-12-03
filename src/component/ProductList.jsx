@@ -11,7 +11,7 @@ function ProductList() {
 
     useEffect(() => {
         setDisableButton(true);
-    })
+    });
 
     return (
         <>

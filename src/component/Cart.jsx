@@ -15,7 +15,7 @@ function Cart() {
         reduceItem,
         setCheckout,
         setProductList,
-        sumTotal
+        sumTotal,
     } = useContext(AppContext);
 
     const handleClick = () => {

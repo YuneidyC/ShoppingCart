@@ -19,7 +19,7 @@ function Navbar() {
         setProductList,
         setCheckout,
         disableButton,
-        setDisableButton
+        setDisableButton,
     } = useContext(AppContext);
 
     const handleClick = () => {
@@ -32,14 +32,14 @@ function Navbar() {
     const openCartComponent = () => {
         setOpenCart((prev) => !prev);
         setDisableButton((prev) => !prev);
-    }
+    };
 
     return (
         <>
-            <nav className='fixed z-40'>
+            <nav className="fixed z-40">
                 <ul className="h-full flex items-center justify-between">
                     <li className="font-weight" onClick={() => handleClick()}>
-                        <Link className={"font-weight"} to="/">
+                        <Link className={'font-weight'} to="/">
                             Home
                         </Link>
                     </li>
@@ -49,7 +49,12 @@ function Navbar() {
                         </h1>
                     </li>
                     <li>
-                        <button style={!disableButton ? {pointerEvents: "none", opacity: "0.5"} : {}}
+                        <button
+                            style={
+                                !disableButton
+                                    ? { pointerEvents: 'none', opacity: '0.5' }
+                                    : {}
+                            }
                             className="w-[30px] h-[30px] cursor-pointer"
                             onClick={() => openCartComponent()}
                         >
@@ -64,7 +69,7 @@ function Navbar() {
                                 </div>
                             ) : null}
                         </button>
-                        {openCart ? <Cart /> : ""}
+                        {openCart ? <Cart /> : ''}
                     </li>
                 </ul>
             </nav>

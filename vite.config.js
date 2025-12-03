@@ -16,7 +16,7 @@ export default defineConfig({
       '@Assets': '/src/assets',
       '@Pages': '/src/pages',
       '@Hooks': '/src/hooks',
-      '@Styles': '/src/styles'
+      '@Styles': '/src/styles',
     },
   },
 });
