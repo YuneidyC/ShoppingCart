@@ -17,6 +17,7 @@ function Navbar() {
         setOpenCart,
         productList,
         setProductList,
+        setCheckout,
         disableButton,
         setDisableButton
     } = useContext(AppContext);
@@ -24,6 +25,7 @@ function Navbar() {
     const handleClick = () => {
         if (!productList) {
             setProductList(true);
+            setCheckout(false);
         }
     };
 

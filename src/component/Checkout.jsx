@@ -26,6 +26,7 @@ function Checkout() {
         reduceItem,
         sumTotal,
         setDisableButton,
+        setOpenCart
     } = useContext(AppContext);
 
     useEffect(() => {
