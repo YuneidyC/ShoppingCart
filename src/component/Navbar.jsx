@@ -29,6 +29,11 @@ function Navbar() {
         }
     };
 
+    const openCartComponent = () => {
+        setOpenCart((prev) => !prev);
+        setDisableButton((prev) => !prev);
+    }
+
     return (
         <>
             <nav>
@@ -46,7 +51,7 @@ function Navbar() {
                     <li>
                         <button style={!disableButton ? {pointerEvents: "none", opacity: "0.5"} : {}}
                             className="w-[30px] h-[30px] cursor-pointer"
-                            onClick={() => setOpenCart((prev) => !prev)}
+                            onClick={() => openCartComponent()}
                         >
                             <img
                                 className="w-[30px] h-[30px]"
