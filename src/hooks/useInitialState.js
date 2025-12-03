@@ -3,77 +3,77 @@ import { useEffect, useState } from 'react';
 import useGetProducts from '@Hooks/useGetProducts';
 
 const initialState = {
-    cart: [],
+  cart: [],
 };
 
 const useInitialState = () => {
-    const [items, setItems] = useState(initialState);
-    const [currentProducts, setCurrentProducts] = useState([]);
-    const initialProducts = useGetProducts();
-    const [checkout, setCheckout] = useState(false);
-    const [openCart, setOpenCart] = useState(false);
+  const [items, setItems] = useState(initialState);
+  const [currentProducts, setCurrentProducts] = useState([]);
+  const initialProducts = useGetProducts();
+  const [checkout, setCheckout] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
   const [productList, setProductList] = useState(true);
   const [disableButton, setDisableButton] = useState(true);
 
-    useEffect(() => {
-        setCurrentProducts(initialProducts);
-    }, [initialProducts]);
+  useEffect(() => {
+    setCurrentProducts(initialProducts);
+  }, [initialProducts]);
 
-    function getAllProducts() {
-        setCurrentProducts(initialProducts);
+  function getAllProducts() {
+    setCurrentProducts(initialProducts);
   }
 
-    const totalCartItems = () => {
-        let totalCartItems = 0;
+  const totalCartItems = () => {
+    let totalCartItems = 0;
 
-        items.cart.forEach((item) => {
-            totalCartItems += item.qty;
-        });
+    items.cart.forEach((item) => {
+      totalCartItems += item.qty;
+    });
 
-        return totalCartItems;
-    };
+    return totalCartItems;
+  };
 
-    const addToCart = (payload) => {
-        if (items.cart.length >= 0) {
-            const found = items.cart.find((element) => {
-                return element.id === payload.id;
-            });
-            if (found !== undefined) {
-                found.qty++;
-                setItems({
-                    ...items,
-                    cart: [...items.cart],
-                });
-            } else {
-                payload.qty = 1;
-                setItems({
-                    ...items,
-                    cart: [...items.cart, payload],
-                });
-            }
-        }
-    };
-
-    const reduceItem = (payload, indexValue) => {
-        if (payload.qty > 1) {
-            payload.qty--;
-            setItems({
-                ...items,
-                cart: [...items.cart],
-            });
-        } else {
-            removeFromCart(payload, indexValue);
-        }
-    };
-
-    const removeFromCart = (payload, indexValue) => {
+  const addToCart = (payload) => {
+    if (items.cart.length >= 0) {
+      const found = items.cart.find((element) => {
+        return element.id === payload.id;
+      });
+      if (found !== undefined) {
+        found.qty++;
         setItems({
-            ...items,
-            cart: items.cart.filter(
-                (items, index) => items.id !== payload && index !== indexValue,
-            ),
+          ...items,
+          cart: [...items.cart],
         });
-    };
+      } else {
+        payload.qty = 1;
+        setItems({
+          ...items,
+          cart: [...items.cart, payload],
+        });
+      }
+    }
+  };
+
+  const reduceItem = (payload, indexValue) => {
+    if (payload.qty > 1) {
+      payload.qty--;
+      setItems({
+        ...items,
+        cart: [...items.cart],
+      });
+    } else {
+      removeFromCart(payload, indexValue);
+    }
+  };
+
+  const removeFromCart = (payload, indexValue) => {
+    setItems({
+      ...items,
+      cart: items.cart.filter(
+        (items, index) => items.id !== payload && index !== indexValue,
+      ),
+    });
+  };
 
   const sumTotal = () => {
     const reducer = (accumulator, currentValue) =>
@@ -82,23 +82,23 @@ const useInitialState = () => {
     return sum.toFixed(2);
   };
 
-    return {
-        items,
-        addToCart,
-        reduceItem,
-        removeFromCart,
-        getAllProducts,
-        currentProducts,
-        totalCartItems,
-        checkout,
-        setCheckout,
-        openCart,
-        setOpenCart,
+  return {
+    items,
+    addToCart,
+    reduceItem,
+    removeFromCart,
+    getAllProducts,
+    currentProducts,
+    totalCartItems,
+    checkout,
+    setCheckout,
+    openCart,
+    setOpenCart,
     productList,
     setProductList,
     disableButton,
     setDisableButton,
-    sumTotal
+    sumTotal,
   };
 };
 
