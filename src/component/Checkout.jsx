@@ -43,9 +43,9 @@ function Checkout() {
 
     return (
         <>
-            <div className="w-[900px] m-auto">
+            <div className="w-[900px] m-auto top-[50px] relative">
                 <button
-                    className="my-[30px] flex items-center"
+                    className="fixed absolute w-full h-[50px] flex items-center bg-white top-[47px]"
                     onClick={() => handleClick()}
                 >
                     <img
@@ -55,10 +55,10 @@ function Checkout() {
                     />
                     <Link to="/">Continue shopping</Link>
                 </button>
-                <div>
+                <div className="cart-container h-[610px] pt-[60px] pb-[281px] overflow-auto">
                     {items.cart.map((item, index) => (
                         <div className="checkout-elements">
-                            <p className="w-[50px] text-center">{index}</p>
+                            <p className="w-[50px] text-center">{++index}</p>
                             <img
                                 className="w-[100px] h-[100px] mr-[10px]"
                                 src={item.image}
@@ -67,7 +67,7 @@ function Checkout() {
                             <p className="font-semibold justify-self-auto">
                                 {item.title}
                             </p>
-                            <div className="flex w-[70px]">
+                            <div className="flex w-[70px] h-[22px]">
                                 <img
                                     className="cursor-pointer w-[20px] h-[20px] mx-[5px]"
                                     src={minus}
