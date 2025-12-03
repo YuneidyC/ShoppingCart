@@ -20,10 +20,12 @@ function Checkout() {
         removeFromCart,
         reduceItem,
         sumTotal,
+        setDisableButton,
     } = useContext(AppContext);
 
     useEffect(() => {
         setOpenCart(false);
+        setDisableButton(false);
     });
 
     const handleClick = () => {

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 import Product from '@Component/Product';
 
@@ -7,7 +7,11 @@ import AppContext from '@Context/AppContext';
 import '@Styles/App.css';
 
 function ProductList() {
-    const { currentProducts } = useContext(AppContext);
+    const { currentProducts, setDisableButton } = useContext(AppContext);
+
+    useEffect(() => {
+        setDisableButton(true);
+    })
 
     return (
         <>

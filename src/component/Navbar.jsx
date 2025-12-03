@@ -17,6 +17,8 @@ function Navbar() {
         setOpenCart,
         productList,
         setProductList,
+        disableButton,
+        setDisableButton
     } = useContext(AppContext);
 
     const handleClick = () => {
@@ -40,7 +42,7 @@ function Navbar() {
                         </h1>
                     </li>
                     <li>
-                        <button
+                        <button style={!disableButton ? {pointerEvents: "none", opacity: "0.5"} : {}}
                             className="w-[30px] h-[30px] cursor-pointer"
                             onClick={() => setOpenCart((prev) => !prev)}
                         >

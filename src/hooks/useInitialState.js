@@ -13,6 +13,7 @@ const useInitialState = () => {
     const [checkout, setCheckout] = useState(false);
     const [openCart, setOpenCart] = useState(false);
   const [productList, setProductList] = useState(true);
+  const [disableButton, setDisableButton] = useState(true);
 
     useEffect(() => {
         setCurrentProducts(initialProducts);
@@ -95,6 +96,8 @@ const useInitialState = () => {
         setOpenCart,
     productList,
     setProductList,
+    disableButton,
+    setDisableButton,
     sumTotal
   };
 };
