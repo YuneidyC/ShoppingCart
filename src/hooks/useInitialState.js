@@ -74,6 +74,13 @@ const useInitialState = () => {
         });
     };
 
+  const sumTotal = () => {
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price * currentValue.qty;
+    const sum = items.cart.reduce(reducer, 0);
+    return sum.toFixed(2);
+  };
+
     return {
         items,
         addToCart,
@@ -88,6 +95,7 @@ const useInitialState = () => {
         setOpenCart,
     productList,
     setProductList,
+    sumTotal
   };
 };
 

@@ -19,7 +19,7 @@ function Checkout() {
         addToCart,
         removeFromCart,
         reduceItem,
-        setOpenCart,
+        sumTotal,
     } = useContext(AppContext);
 
     useEffect(() => {

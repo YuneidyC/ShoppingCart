@@ -8,8 +8,7 @@ import CartItems from '@Component/CartItems';
 import AppContext from '@Context/AppContext';
 
 function Cart() {
-    const { items, addToCart, removeFromCart, reduceItem } =
-        useContext(AppContext);
+        sumTotal
 
     const sumTotal = () => {
         const reducer = (accumulator, currentValue) =>
