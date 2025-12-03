@@ -5,6 +5,11 @@ import arrow from '@Assets/left-arrow.png';
 import add from '@Assets/add.png';
 import minus from '@Assets/minus.png';
 import close from '@Assets/close.png';
+import americanExpress from '@Assets/american-express.svg';
+import googlePay from '@Assets/google-pay.svg';
+import paypal from '@Assets/paypal.svg';
+import applePay from '@Assets/apple-pay.svg';
+import visa from '@Assets/visa.svg';
 
 import '@Styles/App.css';
 
@@ -84,6 +89,21 @@ function Checkout() {
                             />
                         </div>
                     ))}
+                </div>
+                <div className="total-checkout grid justify-self-center items-center w-[900px] py-5">
+                    <div className="total-value flex justify-self-end items-center w-[150px]">
+                        <button className='left-100 absolute bg-black rounded-sm text-white w-[150px] h-[30px] cursor-pointer font-bold' >Pay</button>
+                        <p className="font-bold">Total: </p>
+                        <p className='absolute right-0'>{sumTotal()} $</p>
+                    </div>
+                    <div className='line w-full bg-gray-400 h-[1px]'></div>
+                    <div className='method-payment w-[300px] flex justify-center gap-3'>
+                        <img className='w-[30px] h-[30px]' src={visa} alt="Visa" />
+                        <img className='w-[30px] h-[30px]' src={americanExpress} alt="American Express" />
+                        <img className='w-[30px] h-[30px]' src={paypal} alt="PayPal" />
+                        <img className='w-[30px] h-[30px]' src={googlePay} alt="Google Pay" />
+                        <img className='w-[30px] h-[30px]' src={applePay} alt="Apple Pay" />
+                    </div>
                 </div>
             </div>
         </>
