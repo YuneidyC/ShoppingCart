@@ -36,7 +36,7 @@ function Navbar() {
 
     return (
         <>
-            <nav>
+            <nav className='fixed z-40'>
                 <ul className="h-full flex items-center justify-between">
                     <li className="font-weight" onClick={() => handleClick()}>
                         <Link className={"font-weight"} to="/">
