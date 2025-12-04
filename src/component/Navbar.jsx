@@ -1,47 +1,78 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { Link } from 'react-router';
 
-import cart from '../assets/cart.png';
+import cart from '@Assets/cart.png';
 
-import '../App.css';
-import Cart from './Cart';
+import '@Styles/App.css';
 
-function Navbar({ items, addToCart, reduceItem, removeFromCart }) {
-    const [openCart, setOpenCart] = useState(false);
+import Cart from '@Component/Cart';
 
-    const totalCartItems = () => {
-        let totalCartItems = 0;
-        items.cart.forEach((item) => {
-            totalCartItems += item.qty;
-        });
-        return totalCartItems;
+import AppContext from '@Context/AppContext';
+
+function Navbar() {
+    const {
+        items,
+        totalCartItems,
+        openCart,
+        setOpenCart,
+        productList,
+        setProductList,
+        setCheckout,
+        disableButton,
+        setDisableButton,
+    } = useContext(AppContext);
+
+    const handleClick = () => {
+        if (!productList) {
+            setProductList(true);
+            setCheckout(false);
+        }
+    };
+
+    const openCartComponent = () => {
+        setOpenCart((prev) => !prev);
+        setDisableButton((prev) => !prev);
     };
 
     return (
         <>
-            <div className="navbar">
-                <h1 className="text-black text-[24px]">Shopping Cart </h1>
-                <button
-                    className="w-[30px] h-[30px] cursor-pointer"
-                    onClick={() => setOpenCart((prev) => !prev)}
-                >
-                    <img className="w-[30px] h-[30px]" src={cart} alt="cart" />
-                    {items.cart.length > 0 ? (
-                        <div className="w-[20px] h-[20px] text-sm font-semibold absolute top-0 right-4 m-[2px] rounded-[40px] bg-orange-200">
-                            {totalCartItems()}
-                        </div>
-                    ) : null}
-                </button>
-            </div>
-            {openCart ? (
-                <Cart
-                    items={items}
-                    addToCart={addToCart}
-                    reduceItem={reduceItem}
-                    removeFromCart={removeFromCart}
-                />
-            ) : (
-                ''
-            )}
+            <nav className="fixed z-40">
+                <ul className="h-full flex items-center justify-between">
+                    <li className="font-weight" onClick={() => handleClick()}>
+                        <Link className={'font-weight'} to="/">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <h1 className="text-black text-[24px]">
+                            Shopping Cart
+                        </h1>
+                    </li>
+                    <li>
+                        <button
+                            style={
+                                !disableButton
+                                    ? { pointerEvents: 'none', opacity: '0.5' }
+                                    : {}
+                            }
+                            className="w-[30px] h-[30px] cursor-pointer"
+                            onClick={() => openCartComponent()}
+                        >
+                            <img
+                                className="w-[30px] h-[30px]"
+                                src={cart}
+                                alt="cart"
+                            />
+                            {items.cart.length > 0 ? (
+                                <div className="w-[20px] h-[20px] text-sm font-semibold absolute top-0 right-4 m-[2px] rounded-[40px] bg-(--color-mustard)">
+                                    {totalCartItems()}
+                                </div>
+                            ) : null}
+                        </button>
+                        {openCart ? <Cart /> : ''}
+                    </li>
+                </ul>
+            </nav>
         </>
     );
 }

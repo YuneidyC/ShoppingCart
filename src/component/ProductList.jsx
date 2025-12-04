@@ -1,17 +1,23 @@
-import Product from './Product';
+import { useContext, useEffect } from 'react';
 
-import '../App.css';
+import Product from '@Component/Product';
 
-function ProductList({ products, addToCart }) {
+import AppContext from '@Context/AppContext';
+
+import '@Styles/App.css';
+
+function ProductList() {
+    const { currentProducts, setDisableButton } = useContext(AppContext);
+
+    useEffect(() => {
+        setDisableButton(true);
+    });
+
     return (
         <>
             <ul className="product-list">
-                {products.map((product) => (
-                    <Product
-                        key={product.id}
-                        product={product}
-                        addToCart={addToCart}
-                    ></Product>
+                {currentProducts.map((product) => (
+                    <Product key={product.id} product={product} />
                 ))}
             </ul>
         </>
