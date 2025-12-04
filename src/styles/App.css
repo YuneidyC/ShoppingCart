@@ -29,7 +29,7 @@
   }
 
   .checkout-elements {
-    @apply w-[100%] grid grid-cols-[50px_100px_60%_70px_15px] gap-8 h-[100px] mb-[34px] items-center justify-start;
+    @apply w-[100%] grid grid-cols-[50px_100px_60%_70px_15px] gap-8 h-[100px] mb-[34px] items-center justify-start pr-4;
   }
 
   .total-checkout {

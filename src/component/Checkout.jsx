@@ -45,7 +45,7 @@ function Checkout() {
         <>
             <div className="w-[900px] m-auto top-[50px] relative">
                 <button
-                    className="fixed absolute w-full h-[50px] flex items-center bg-white top-[47px]"
+                    className="fixed w-full h-[50px] flex items-center bg-white top-[47px]"
                     onClick={() => handleClick()}
                 >
                     <img
@@ -55,10 +55,10 @@ function Checkout() {
                     />
                     <Link to="/">Continue shopping</Link>
                 </button>
-                <div className="cart-container h-[610px] pt-[60px] pb-[281px] overflow-auto">
+                <div className="cart-container h-[calc(100vh-235px)] pt-[60px] overflow-auto">
                     {items.cart.map((item, index) => (
                         <div className="checkout-elements">
-                            <p className="w-[50px] text-center">{++index}</p>
+                            <p className="w-[50px] text-center">{1+index}</p>
                             <img
                                 className="w-[100px] h-[100px] mr-[10px]"
                                 src={item.image}
@@ -97,7 +97,7 @@ function Checkout() {
                             Pay
                         </button>
                         <p className="font-bold">Total: </p>
-                        <p className="absolute right-0">{sumTotal()} $</p>
+                        <p className="absolute right-0 font-weight">${sumTotal()}</p>
                     </div>
                     <div className="line w-full bg-gray-400 h-[1px]"></div>
                     <div className="method-payment w-[300px] flex justify-center gap-3">
