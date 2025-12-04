@@ -1,4 +1,4 @@
-import Home from '@Component/Home';
+import Home from '@Pages/Home';
 
 import useInitialState from '@Hooks/useInitialState';
 import AppContext from '@Context/AppContext';

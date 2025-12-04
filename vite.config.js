@@ -17,6 +17,7 @@ export default defineConfig({
       '@Pages': '/src/pages',
       '@Hooks': '/src/hooks',
       '@Styles': '/src/styles',
+      '@Routes': '/src/routes',
     },
   },
 });
