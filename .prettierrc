@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.html", "legacy/**/*.js", "*.jsx"],
+      "options": {
+        "tabWidth": 4,
+        "semi": true
+      }
+    }
+  ]
+}
