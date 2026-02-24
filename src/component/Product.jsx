@@ -15,7 +15,10 @@ function Product({ product }) {
 
     return (
         <>
-            <li onClick={() => openDetails(product)} className="h-[240px] grid justify-center items-center cursor-pointer">
+            <li
+                onClick={() => openDetails(product)}
+                className="h-[240px] grid justify-center items-center cursor-pointer"
+            >
                 <img
                     className="w-[120px] h-[120px] justify-self-center-safe self-center"
                     src={product.image}
