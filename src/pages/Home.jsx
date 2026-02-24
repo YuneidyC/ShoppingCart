@@ -5,6 +5,7 @@ import '@Styles/App.css';
 import Navbar from '@Component/Navbar';
 import ProductList from '@Component/ProductList';
 import Checkout from '@Component/Checkout';
+import Details from '@Component/Details';
 
 import AppContext from '@Context/AppContext';
 
@@ -16,6 +17,7 @@ function Home() {
             <Navbar />
             {productList ? <ProductList /> : ''}
             {checkout ? <Checkout /> : ''}
+            <Details />
         </>
     );
 }

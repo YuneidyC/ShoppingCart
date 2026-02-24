@@ -35,4 +35,12 @@
   .total-checkout {
     @apply w-[100%] fixed right-0 left-0 bottom-0 bg-white flex h-[200px] justify-items-center items-center;
   }
+
+  .details-overlay {
+    @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+  }
+
+  .details-modal {
+    @apply bg-white rounded-lg p-6 max-w-[640px] w-full mx-4 shadow-lg;
+  }
 }
