@@ -7,7 +7,7 @@ import '@Styles/App.css';
 import AppContext from '@Context/AppContext';
 
 function Product({ product }) {
-    const { addToCart } = useContext(AppContext);
+    const { addToCart, openDetails } = useContext(AppContext);
 
     const handleAddItem = (item) => {
         addToCart(item);
@@ -15,7 +15,10 @@ function Product({ product }) {
 
     return (
         <>
-            <li className="h-[240px] grid justify-center items-center">
+            <li
+                onClick={() => openDetails(product)}
+                className="h-[240px] grid justify-center items-center cursor-pointer"
+            >
                 <img
                     className="w-[120px] h-[120px] justify-self-center-safe self-center"
                     src={product.image}
@@ -29,7 +32,8 @@ function Product({ product }) {
                         className="w-[25px] h-[25px] row-span-2 cursor-pointer justify-self-end self-start"
                         src={addItem}
                         alt="Add"
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.stopPropagation();
                             handleAddItem(product);
                         }}
                     />

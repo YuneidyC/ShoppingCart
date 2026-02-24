@@ -14,6 +14,8 @@ const useInitialState = () => {
   const [openCart, setOpenCart] = useState(false);
   const [productList, setProductList] = useState(true);
   const [disableButton, setDisableButton] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
   useEffect(() => {
     setCurrentProducts(initialProducts);
@@ -82,6 +84,16 @@ const useInitialState = () => {
     return sum.toFixed(2);
   };
 
+  const openDetails = (product) => {
+    setSelectedProduct(product);
+    setIsDetailsOpen(true);
+  };
+
+  const closeDetails = () => {
+    setSelectedProduct(null);
+    setIsDetailsOpen(false);
+  };
+
   return {
     items,
     addToCart,
@@ -99,6 +111,12 @@ const useInitialState = () => {
     disableButton,
     setDisableButton,
     sumTotal,
+    selectedProduct,
+    setSelectedProduct,
+    isDetailsOpen,
+    setIsDetailsOpen,
+    openDetails,
+    closeDetails,
   };
 };
 
