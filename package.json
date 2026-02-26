@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yuneidyc.github.io/ShoppingCart/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,6 +13,10 @@
     "format-check": "prettier . --single-quote --check",
     "deploy": "gh-pages -d dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://yuneidyc.github.io/ShoppingCart/"
+    },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "gh-pages": "^6.2.0",
