@@ -1,8 +1,9 @@
 {
-  "name": "shoppingcart",
+  "name": "ShoppingCart",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://yuneidyc.github.io/ShoppingCart/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
