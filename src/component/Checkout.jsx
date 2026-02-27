@@ -32,7 +32,7 @@ function Checkout() {
     useEffect(() => {
         setOpenCart(false);
         setDisableButton(false);
-    });
+    }, [setOpenCart, setDisableButton]);
 
     const handleClick = () => {
         if (checkout) {

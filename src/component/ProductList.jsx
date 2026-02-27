@@ -9,9 +9,10 @@ import '@Styles/App.css';
 function ProductList() {
     const { currentProducts, setDisableButton } = useContext(AppContext);
 
+    // only set disable button once when component mounts
     useEffect(() => {
         setDisableButton(true);
-    });
+    }, [setDisableButton]);
 
     return (
         <>
